@@ -80,6 +80,9 @@ var board = {
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
+  document.addEventListener('contextmenu', checkForWin);
+  document.addEventListener('click', checkForWin);
+
   for (var i = 0; i < board.cells.length; i++) {
     board.cells[i].surroundingMines = countSurroundingMines(board.cells[i]);
   };
@@ -92,11 +95,29 @@ function startGame () {
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
 function checkForWin () {
+  
+  // for loop to check through all the cells on the board
+  for (var b = 0; b <board.cells.length; b++) {
+
+    // if cell has a mine and is NOT marked, then return out of the loop.
+    if (board.cells[b].isMine) {
+      if (board.cells[b].isMarked === false)
+      return;
+    } 
+
+    // if cell is still hidden, then return out of the loop.
+    else if (board.cells[b].hidden)
+    return;
+    }
+
+  // if all the mines have been flagged and all the other cells have been unhidden, then game over.  
+  lib.displayMessage('You win!')
+}  
 
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
-  //   lib.displayMessage('You win!')
-}
+  //lib.displayMessage('You win!')
+  //}
 
 // Define this function to count the number of mines around the cell
 // (there could be as many as 8). You don't have to get the surrounding
