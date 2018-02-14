@@ -1,6 +1,26 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
+var board = {cells: []}  //sets the board variable, with cell properties TBC when createBoardCells function is generated
+var boardSize = 3 //sets board size to 3x3, to be referenced in for loop
+createBoardCells()  //
+
+//function to generate the board size
+function createBoardCells() {
+  for (var x = 0; x < boardSize; x++) {
+    for (var y = 0; y < boardSize; y++) {
+      board.cells.push({
+      row: x,
+      col: y,
+      isMine: true,
+      isMarked: false,
+      hidden: true
+      })
+    }  
+  }
+}
+
+/* Previous manual creation of the board cells
 var board = {
   cells: [
     {
@@ -77,7 +97,7 @@ var board = {
     }
   ]
 }
-
+*/
 function startGame () {
   // Don't remove this function call: it makes the game work!
   document.addEventListener('contextmenu', checkForWin);
