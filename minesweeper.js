@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', startGame)
 // Define your `board` object here!
 var board = {cells: []}  //sets the board variable, with cell properties TBC when createBoardCells function is generated
 var boardSize = 3 //sets board size to 3x3, to be referenced in for loop
-createBoardCells()  //
+createBoardCells()  //calls the createBoardCells function
+setMine() // calls function to randomly generate mines
 
 //function to generate the board size
 function createBoardCells() {
@@ -12,13 +13,24 @@ function createBoardCells() {
       board.cells.push({
       row: x,
       col: y,
-      isMine: true,
+      isMine: setMine(),
       isMarked: false,
       hidden: true
       })
     }  
   }
 }
+
+//function to set mines
+function setMine() {
+  if ((isMine = Math.floor(Math.random() *2)) === 0) {
+      isMine = false;
+  } else {
+      isMine = true;
+  }
+  return isMine;
+}
+
 
 /* Previous manual creation of the board cells
 var board = {
