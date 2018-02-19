@@ -59,4 +59,6 @@ div.marked, div.marked:hover {
   background: no-repeat center/60% url("images/mark.svg") deepskyblue;
 }
 
-
+#bombyBomb {
+  background-color: yellow;
+}
