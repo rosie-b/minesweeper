@@ -32,84 +32,6 @@ function setMine() {
 }
 
 
-/* Previous manual creation of the board cells
-var board = {
-  cells: [
-    {
-      row: 0, 
-      col: 0, 
-      isMine: true, 
-      isMarked: false,
-      hidden: true,
-      surroundingMines: 0
-    }, 
-    {
-      row: 0, 
-      col: 1, 
-      isMine: true,
-      isMarked: false, 
-      hidden: true,
-      surroundingMines: 0
-    },
-    {
-      row: 0, 
-      col: 2, 
-      isMine: false,
-      isMarked: false, 
-      hidden: true,
-      surroundingMines: 0
-    },
-    {
-      row: 1, 
-      col: 0, 
-      isMine: false, 
-      isMarked: false,
-      hidden: true,
-      surroundingMines: 0
-    }, 
-    {
-      row: 1, 
-      col: 1, 
-      isMine: false, 
-      isMarked: false,
-      hidden: true,
-      surroundingMines: 0
-    },
-    {
-      row: 1, 
-      col: 2, 
-      isMine: true, 
-      isMarked: false,
-      hidden: true,
-      surroundingMines: 0
-    }, 
-    {
-      row: 2, 
-      col: 0, 
-      isMine: false, 
-      isMarked: false,
-      hidden: true,
-      surroundingMines: 0
-    }, 
-    {
-      row: 2, 
-      col: 1, 
-      isMine: true, 
-      isMarked: false,
-      hidden: true,
-      surroundingMines: 0
-    },
-    {
-      row: 2, 
-      col: 2, 
-      isMine: false, 
-      isMarked: false,
-      hidden: true,
-      surroundingMines: 0
-    }
-  ]
-}
-*/
 function startGame () {
   // Don't remove this function call: it makes the game work!
   document.addEventListener('contextmenu', checkForWin);
@@ -146,7 +68,12 @@ function checkForWin () {
   lib.displayMessage('You win!')
 }  
 
-  // You can use this function call to declare a winner (once you've
+// function to restart the game
+function restart() {
+  document.location.href ="";
+}
+
+// You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
   //lib.displayMessage('You win!')
   //}
